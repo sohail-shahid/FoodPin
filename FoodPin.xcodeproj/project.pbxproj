@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
+		CE96D0BA2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
+		CE96D0BB2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */; };
-		CEF1AA6C2A5DDE0F008E14B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1AA6B2A5DDE0F008E14B4 /* ContentView.swift */; };
+		CEF1AA6C2A5DDE0F008E14B4 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */; };
 		CEF1AA6E2A5DDE10008E14B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1AA6D2A5DDE10008E14B4 /* Assets.xcassets */; };
 		CEF1AA712A5DDE10008E14B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1AA702A5DDE10008E14B4 /* Preview Assets.xcassets */; };
 		CEF1AA7B2A5DDE10008E14B4 /* FoodPinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1AA7A2A5DDE10008E14B4 /* FoodPinTests.swift */; };
@@ -34,9 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CEF1AA662A5DDE0F008E14B4 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinApp.swift; sourceTree = "<group>"; };
-		CEF1AA6B2A5DDE0F008E14B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		CEF1AA6D2A5DDE10008E14B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF1AA702A5DDE10008E14B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEF1AA762A5DDE10008E14B4 /* FoodPinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodPinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */,
-				CEF1AA6B2A5DDE0F008E14B4 /* ContentView.swift */,
+				CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */,
 				CEF1AA6D2A5DDE10008E14B4 /* Assets.xcassets */,
 				CEF1AA6F2A5DDE10008E14B4 /* Preview Content */,
+				CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -257,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF1AA6C2A5DDE0F008E14B4 /* ContentView.swift in Sources */,
+				CEF1AA6C2A5DDE0F008E14B4 /* RestaurantListView.swift in Sources */,
 				CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */,
+				CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE96D0BA2A5F2D5A00A2E49C /* Restaurant.swift in Sources */,
 				CEF1AA7B2A5DDE10008E14B4 /* FoodPinTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +283,7 @@
 			files = (
 				CEF1AA872A5DDE10008E14B4 /* FoodPinUITestsLaunchTests.swift in Sources */,
 				CEF1AA852A5DDE10008E14B4 /* FoodPinUITests.swift in Sources */,
+				CE96D0BB2A5F2D5A00A2E49C /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
