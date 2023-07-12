@@ -32,7 +32,13 @@ struct RestaurantListView: View {
         Restaurant(name: "CASK Pub and Kitchen", image: "cask", location: "London", type: "Thai")]
     
     var body: some View {
-        LargeImageView(resturants: resturants)
+        List {
+            ForEach(resturants, id: \.self) { resturant in
+                BasicTextImageRow(resturant: resturant)
+            }
+            .listRowSeparator(.hidden)
+        }
+        .listStyle(.plain)
     }
 }
 
@@ -43,59 +49,45 @@ struct RestaurantListView_Previews: PreviewProvider {
     }
 }
 
-struct LargeImageView: View {
-    let resturants: [Restaurant]
-    init(resturants: [Restaurant]) {
-        self.resturants = resturants
-    }
+struct FullImageRow: View {
+    var resturant: Restaurant
     var body: some View {
-        List {
-            ForEach(resturants, id: \.self) { resturant in
-                VStack (alignment: .leading) {
-                    Image(resturant.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .cornerRadius(20)
-                    Text(resturant.name)
-                        .font(.system(.title2, design: .rounded))
-                    Text(resturant.type)
-                        .font(.system(.body, design: .rounded))
-                    Text(resturant.location)
-                        .font(.system(.subheadline, design: .rounded))
-                        .foregroundColor(.gray)
-                }
+        VStack (alignment: .leading, spacing: 20) {
+            Image(resturant.image)
+                .resizable()
+                .frame(width: .infinity)
+                .cornerRadius(20)
+                .aspectRatio(contentMode: .fit)
+            VStack (alignment: .leading) {
+                Text(resturant.name)
+                    .font(.system(.title2, design: .rounded))
+                Text(resturant.type)
+                    .font(.system(.body, design: .rounded))
+                Text(resturant.location)
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundColor(.gray)
             }
-            .listRowSeparator(.hidden)
         }
-        .listStyle(.plain)
     }
 }
-struct SmallImageView: View {
-    let resturants: [Restaurant]
-    init(resturants: [Restaurant]) {
-        self.resturants = resturants
-    }
+
+struct BasicTextImageRow: View {
+    var resturant: Restaurant
     var body: some View {
-        List {
-            ForEach(resturants, id: \.self) { resturant in
-                HStack (alignment: .top, spacing: 20) {
-                    Image(resturant.image)
-                        .resizable()
-                        .frame(width: 120, height: 118)
-                        .cornerRadius(20)
-                    VStack (alignment: .leading) {
-                        Text(resturant.name)
-                            .font(.system(.title2, design: .rounded))
-                        Text(resturant.type)
-                            .font(.system(.body, design: .rounded))
-                        Text(resturant.location)
-                            .font(.system(.subheadline, design: .rounded))
-                            .foregroundColor(.gray)
-                    }
-                }
+        HStack (alignment: .top, spacing: 20) {
+            Image(resturant.image)
+                .resizable()
+                .frame(width: 120, height: 118)
+                .cornerRadius(20)
+            VStack (alignment: .leading) {
+                Text(resturant.name)
+                    .font(.system(.title2, design: .rounded))
+                Text(resturant.type)
+                    .font(.system(.body, design: .rounded))
+                Text(resturant.location)
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundColor(.gray)
             }
-            .listRowSeparator(.hidden)
         }
-        .listStyle(.plain)
     }
 }
