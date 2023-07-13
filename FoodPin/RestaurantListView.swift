@@ -31,10 +31,12 @@ struct RestaurantListView: View {
         Restaurant(name: "Royal Oak", image: "royaloak", location: "London", type: "British"),
         Restaurant(name: "CASK Pub and Kitchen", image: "cask", location: "London", type: "Thai")]
     
+    @State var restaurantIsFavorites = Array(repeating: false, count: 21)
+    
     var body: some View {
         List {
-            ForEach(resturants, id: \.self) { resturant in
-                BasicTextImageRow(resturant: resturant)
+            ForEach(resturants.indices, id: \.self) { index in
+                BasicTextImageRow(resturant: resturants[index], isFavorite: $restaurantIsFavorites[index])
             }
             .listRowSeparator(.hidden)
         }
@@ -55,9 +57,9 @@ struct FullImageRow: View {
         VStack (alignment: .leading, spacing: 20) {
             Image(resturant.image)
                 .resizable()
-                .frame(width: .infinity)
+                .scaledToFill()
+                .frame(height: 200)
                 .cornerRadius(20)
-                .aspectRatio(contentMode: .fit)
             VStack (alignment: .leading) {
                 Text(resturant.name)
                     .font(.system(.title2, design: .rounded))
@@ -72,7 +74,13 @@ struct FullImageRow: View {
 }
 
 struct BasicTextImageRow: View {
+    
+    @State private var showOptions = false
+    @State private var showError = false
+    
     var resturant: Restaurant
+    @Binding var isFavorite: Bool
+    
     var body: some View {
         HStack (alignment: .top, spacing: 20) {
             Image(resturant.image)
@@ -88,6 +96,29 @@ struct BasicTextImageRow: View {
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundColor(.gray)
             }
+            if isFavorite {
+                Spacer()
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.yellow)
+            }
+        }
+        .onTapGesture {
+            showOptions.toggle()
+        }
+        .confirmationDialog("What do you want to do?", isPresented: $showOptions, titleVisibility: .visible) {
+            Button("Reserve a table") {
+                self.showError.toggle()
+            }
+            
+            Button(self.isFavorite  ? "Remove from favorites" : "Mark as favorite")  {
+                self.isFavorite.toggle()
+            }
+        }
+        .alert("Not yet available", isPresented: $showError) {
+            Button("OK") {
+            }
+        } message: {
+            Text("Sorry, this feature is not available yet. Please retry later.")
         }
     }
 }
