@@ -2,7 +2,7 @@
 //  RestaurantListView.swift
 //  FoodPin
 //
-//  Created by CRLHL-KHANNSOH2 on 11/07/2023.
+//  Created by Sohail Khan on 11/07/2023.
 //
 
 import SwiftUI
@@ -35,7 +35,7 @@ struct RestaurantListView: View {
     var body: some View {
         List {
             ForEach(resturants.indices, id: \.self) { index in
-                BasicTextImageRow(resturant: $resturants[index])
+                BasicTextImageRow(restaurant: $resturants[index])
                     .swipeActions(edge: .leading, allowsFullSwipe: false, content: {
                         Button {
                         } label: {
@@ -94,39 +94,55 @@ struct BasicTextImageRow: View {
     @State private var showError = false
     
     // MARK: - Binding
-    @Binding var resturant: Restaurant
+    @Binding var restaurant: Restaurant
     
     var body: some View {
         HStack (alignment: .top, spacing: 20) {
-            Image(resturant.image)
+            Image(restaurant.image)
                 .resizable()
                 .frame(width: 120, height: 118)
                 .cornerRadius(20)
             VStack (alignment: .leading) {
-                Text(resturant.name)
+                Text(restaurant.name)
                     .font(.system(.title2, design: .rounded))
-                Text(resturant.type)
+                Text(restaurant.type)
                     .font(.system(.body, design: .rounded))
-                Text(resturant.location)
+                Text(restaurant.location)
                     .font(.system(.subheadline, design: .rounded))
                     .foregroundColor(.gray)
             }
-            if resturant.isFavorite {
+            if restaurant.isFavorite {
                 Spacer()
                 Image(systemName: "heart.fill")
                     .foregroundColor(.yellow)
             }
         }
-        .onTapGesture {
-            showOptions.toggle()
-        }
-        .confirmationDialog("What do you want to do?", isPresented: $showOptions, titleVisibility: .visible) {
-            Button("Reserve a table") {
+        .contextMenu {
+            Button( action: {
                 self.showError.toggle()
+            }) {
+                HStack {
+                    Text("Reserve a table")
+                    Image(systemName: "phone")
+                }
             }
             
-            Button(resturant.isFavorite  ? "Remove from favorites" : "Mark as favorite")  {
-                resturant.isFavorite.toggle()
+            Button( action: {
+                restaurant.isFavorite.toggle()
+            }) {
+                HStack {
+                    Text(restaurant.isFavorite ? "Remove from favorites" : "Mark as favorite")
+                    Image(systemName: "heart")
+                }
+            }
+            
+            Button ( action: {
+                self.showOptions.toggle()
+            }) {
+                HStack {
+                    Text("Share")
+                    Image(systemName: "square.and.arrow.up")
+                }
             }
         }
         .alert("Not yet available", isPresented: $showError) {
@@ -134,6 +150,14 @@ struct BasicTextImageRow: View {
             }
         } message: {
             Text("Sorry, this feature is not available yet. Please retry later.")
+        }
+        .sheet(isPresented: $showOptions) {
+            let defaultText = "Just checking in at \(restaurant.name)"
+            if let imageToShare = UIImage(named: restaurant.image) {
+                ActivityView(activityItems: [defaultText, imageToShare])
+            } else {
+                ActivityView(activityItems: [defaultText])
+            }
         }
     }
 }

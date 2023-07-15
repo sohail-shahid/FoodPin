@@ -2,7 +2,7 @@
 //  Restaurant.swift
 //  FoodPin
 //
-//  Created by CRLHL-KHANNSOH2 on 12/07/2023.
+//  Created by Sohail Khan on 12/07/2023.
 //
 
 import Foundation
