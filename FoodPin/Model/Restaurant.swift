@@ -12,4 +12,5 @@ struct Restaurant: Hashable {
     var image: String
     var location: String
     var type: String
+    var isFavorite: Bool
 }

@@ -75,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE3080952A62BF4C009397DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEC924DA2A60A3BC00AC68F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CEF1AA5D2A5DDE0E008E14B4 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +114,11 @@
 		CEF1AA682A5DDE0F008E14B4 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				CE3080952A62BF4C009397DD /* View */,
+				CEC924DA2A60A3BC00AC68F7 /* Model */,
 				CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */,
-				CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */,
 				CEF1AA6D2A5DDE10008E14B4 /* Assets.xcassets */,
 				CEF1AA6F2A5DDE10008E14B4 /* Preview Content */,
-				CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
