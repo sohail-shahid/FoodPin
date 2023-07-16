@@ -33,28 +33,36 @@ struct RestaurantListView: View {
     
     
     var body: some View {
-        List {
-            ForEach(resturants.indices, id: \.self) { index in
-                BasicTextImageRow(restaurant: $resturants[index])
-                    .swipeActions(edge: .leading, allowsFullSwipe: false, content: {
-                        Button {
-                        } label: {
-                            Image(systemName: "heart")
-                        }
-                        .tint(.green)
-                        Button {
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                        }
-                        .tint(.orange)
-                    })
+        NavigationStack {
+            List {
+                ForEach(resturants.indices, id: \.self) { index in
+                    NavigationLink (destination: RestaurantDetailView (restaurant: resturants[index])) {
+                        BasicTextImageRow(restaurant: $resturants[index])
+                            .swipeActions(edge: .leading, allowsFullSwipe: false, content: {
+                                Button {
+                                } label: {
+                                    Image(systemName: "heart")
+                                }
+                                .tint(.green)
+                                Button {
+                                } label: {
+                                    Image(systemName: "square.and.arrow.up")
+                                }
+                                .tint(.orange)
+                        })
+                    }
+                }
+                .onDelete(perform: { index in
+                    resturants.remove(atOffsets: index)
+                })
+                .listRowSeparator(.hidden)
             }
-            .onDelete(perform: { index in
-                resturants.remove(atOffsets: index)
-            })
-            .listRowSeparator(.hidden)
+            .listStyle(.plain)
+            .navigationTitle("Food Pin")
+            .navigationBarTitleDisplayMode(.automatic)
         }
-        .listStyle(.plain)
+        .accentColor(.white)
+
     }
 }
 
