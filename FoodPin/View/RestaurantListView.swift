@@ -9,27 +9,27 @@ import SwiftUI
 
 struct RestaurantListView: View {
     @State var resturants: [Restaurant] = [
-        Restaurant(name: "Cafe Deadend", image: "cafedeadend", location: "Hong Kong", type: "Coffee & Tea Shop", isFavorite: false),
-        Restaurant(name: "Homei", image: "homei", location: "Hong Kong", type: "Cafe", isFavorite: false),
-        Restaurant(name: "Teakha", image: "teakha", location: "Hong Kong", type: "Tea House", isFavorite: false),
-        Restaurant(name: "Cafe Loisl", image: "cafeloisl", location: "Hong Kong", type: "Austrian / Causual Drink", isFavorite: false),
-        Restaurant(name: "Petite Oyster", image: "petiteoyster", location: "Hong Kong", type: "French", isFavorite: false),
-        Restaurant(name: "For Kee Restaurant", image: "forkee", location: "Hong Kong", type: "Bakery", isFavorite: false),
-        Restaurant(name: "Po's Atelier", image: "posatelier", location: "Hong Kong", type: "Bakery", isFavorite: false),
-        Restaurant(name: "Bourke Street Bakery", image: "bourkestreetbakery", location: "Sydney", type: "Chocolate", isFavorite: false),
-        Restaurant(name: "Haigh's Chocolate", image: "haigh", location: "Sydney", type: "Cafe", isFavorite: false),
-        Restaurant(name: "Palomino Espresso", image: "palomino", location: "Sydney", type: "American / Seafood", isFavorite: false),
-        Restaurant(name: "Upstate", image: "upstate", location: "New York", type: "American", isFavorite: false),
-        Restaurant(name: "Traif", image: "traif", location: "New York", type: "American", isFavorite: false),
-        Restaurant(name: "Graham Avenue Meats", image: "graham", location: "New York", type: "Breakfast & Brunch", isFavorite: false),
-        Restaurant(name: "Waffle & Wolf", image: "waffleandwolf", location: "New York", type: "Coffee & Tea", isFavorite: false),
-        Restaurant(name: "Five Leaves", image: "fiveleaves", location: "New York", type: "Coffee & Tea", isFavorite: false),
-        Restaurant(name: "Cafe Lore", image: "cafelore", location: "New York", type: "Latin American", isFavorite: false),
-        Restaurant(name: "Confessional", image: "confessional", location: "New York", type: "Spanish", isFavorite: false),
-        Restaurant(name: "Barrafina", image: "barrafina", location: "London", type: "Spanish", isFavorite: false),
-        Restaurant(name: "Donostia", image: "donostia", location: "London", type: "Spanish", isFavorite: false),
-        Restaurant(name: "Royal Oak", image: "royaloak", location: "London", type: "British", isFavorite: false),
-        Restaurant(name: "CASK Pub and Kitchen", image: "cask", location: "London", type: "Thai", isFavorite: false)]
+        Restaurant(name: "Cafe Deadend", image: "cafedeadend", location: "Hong Kong", type: "Coffee & Tea Shop", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Homei", image: "homei", location: "Hong Kong", type: "Cafe", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Teakha", image: "teakha", location: "Hong Kong", type: "Tea House", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Cafe Loisl", image: "cafeloisl", location: "Hong Kong", type: "Austrian / Causual Drink", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Petite Oyster", image: "petiteoyster", location: "Hong Kong", type: "French", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "For Kee Restaurant", image: "forkee", location: "Hong Kong", type: "Bakery", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Po's Atelier", image: "posatelier", location: "Hong Kong", type: "Bakery", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Bourke Street Bakery", image: "bourkestreetbakery", location: "Sydney", type: "Chocolate", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Haigh's Chocolate", image: "haigh", location: "Sydney", type: "Cafe", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Palomino Espresso", image: "palomino", location: "Sydney", type: "American / Seafood", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Upstate", image: "upstate", location: "New York", type: "American", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Traif", image: "traif", location: "New York", type: "American", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Graham Avenue Meats", image: "graham", location: "New York", type: "Breakfast & Brunch", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Waffle & Wolf", image: "waffleandwolf", location: "New York", type: "Coffee & Tea", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Five Leaves", image: "fiveleaves", location: "New York", type: "Coffee & Tea", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Cafe Lore", image: "cafelore", location: "New York", type: "Latin American", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Confessional", image: "confessional", location: "New York", type: "Spanish", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Barrafina", image: "barrafina", location: "London", type: "Spanish", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Donostia", image: "donostia", location: "London", type: "Spanish", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "Royal Oak", image: "royaloak", location: "London", type: "British", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
+        Restaurant(name: "CASK Pub and Kitchen", image: "cask", location: "London", type: "Thai", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.")]
     
     
     var body: some View {
@@ -49,7 +49,7 @@ struct RestaurantListView: View {
                                     Image(systemName: "square.and.arrow.up")
                                 }
                                 .tint(.orange)
-                        })
+                            })
                     }
                 }
                 .onDelete(perform: { index in
@@ -62,7 +62,6 @@ struct RestaurantListView: View {
             .navigationBarTitleDisplayMode(.automatic)
         }
         .accentColor(.white)
-
     }
 }
 

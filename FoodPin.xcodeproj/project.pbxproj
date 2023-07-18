@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */; };
 		CE3080972A6326EC009397DD /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3080962A6326EC009397DD /* ActivityView.swift */; };
+		CE55312B2A664E000039B093 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5531292A664E000039B093 /* Nunito-Regular.ttf */; };
+		CE55312C2A664E000039B093 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE55312A2A664E000039B093 /* Nunito-Bold.ttf */; };
 		CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CE96D0BA2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CE96D0BB2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
@@ -41,6 +43,9 @@
 /* Begin PBXFileReference section */
 		CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		CE3080962A6326EC009397DD /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		CE5531282A664D940039B093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CE5531292A664E000039B093 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		CE55312A2A664E000039B093 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CEF1AA662A5DDE0F008E14B4 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPinApp.swift; sourceTree = "<group>"; };
@@ -89,6 +94,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CE5531212A664CD70039B093 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE5531222A664CE10039B093 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE5531222A664CE10039B093 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE5531232A664CFF0039B093 /* Nunito */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE5531232A664CFF0039B093 /* Nunito */ = {
+			isa = PBXGroup;
+			children = (
+				CE55312A2A664E000039B093 /* Nunito-Bold.ttf */,
+				CE5531292A664E000039B093 /* Nunito-Regular.ttf */,
+			);
+			path = Nunito;
+			sourceTree = "<group>";
+		};
 		CEC924DA2A60A3BC00AC68F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +150,8 @@
 		CEF1AA682A5DDE0F008E14B4 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				CE5531282A664D940039B093 /* Info.plist */,
+				CE5531212A664CD70039B093 /* Resources */,
 				CE3080952A62BF4C009397DD /* View */,
 				CEC924DA2A60A3BC00AC68F7 /* Model */,
 				CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */,
@@ -258,7 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE55312B2A664E000039B093 /* Nunito-Regular.ttf in Resources */,
 				CEF1AA712A5DDE10008E14B4 /* Preview Assets.xcassets in Resources */,
+				CE55312C2A664E000039B093 /* Nunito-Bold.ttf in Resources */,
 				CEF1AA6E2A5DDE10008E14B4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +486,7 @@
 				DEVELOPMENT_TEAM = FZXL4C9474;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodPin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +516,7 @@
 				DEVELOPMENT_TEAM = FZXL4C9474;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodPin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
