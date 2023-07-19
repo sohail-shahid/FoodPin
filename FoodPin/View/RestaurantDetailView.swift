@@ -2,7 +2,7 @@
 //  RestaurantDetailView.swift
 //  FoodPin
 //
-//  Created by CRLHL-KHANNSOH2 on 16/07/2023.
+//  Created by Sohail khan on 16/07/2023.
 //
 
 import SwiftUI
@@ -60,8 +60,17 @@ struct RestaurantDetailView: View {
                     
                 }
                 .padding(.horizontal)
+                NavigationLink(destination: MapView(location: restaurant.location, interactionMode: .all)
+                    .ignoresSafeArea()
+                ) {
+                    MapView(location: restaurant.location, interactionMode: .zoom)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .frame(height: 200)
+                        .cornerRadius(20)
+                        .padding()
+                    
+                }
             }
-            .foregroundColor(.black)
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)

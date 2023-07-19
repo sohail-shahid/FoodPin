@@ -11,9 +11,11 @@ import SwiftUI
 struct FoodPinApp: App {
     init() {
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor
-            .systemRed, .font: UIFont(name: "ArialRoundedMTBold", size: 35)!]
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemRed, .font: UIFont(name: "ArialRoundedMTBold", size: 20)!]
+        let titleColor = UIColor(named: "NavigationBarTitle") ?? UIColor.systemRed
+        // UIColor(red: 218.0, green: 96.0, blue: 51.0)
+        let fontName = "ArialRoundedMTBold"
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: titleColor, .font: UIFont(name: fontName, size: 35)!]
+        navBarAppearance.titleTextAttributes = [.foregroundColor: titleColor, .font: UIFont(name: fontName, size: 20)!]
         navBarAppearance.backgroundColor = .clear
         navBarAppearance.backgroundEffect = .none
         navBarAppearance.shadowColor = .clear
