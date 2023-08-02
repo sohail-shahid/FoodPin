@@ -15,4 +15,5 @@ struct Restaurant: Hashable {
     var isFavorite: Bool = false
     var phone: String
     var description: String
+    var rating : Rating
 }

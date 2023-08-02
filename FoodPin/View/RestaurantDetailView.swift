@@ -11,6 +11,7 @@ struct RestaurantDetailView: View {
     var restaurant: Restaurant
     
     @Environment (\.dismiss) var dismiss
+    @State var showReview: Bool = false
     
     var body: some View {
         ScrollView {
@@ -70,8 +71,27 @@ struct RestaurantDetailView: View {
                         .padding()
                     
                 }
+                Button (action: {
+                    self.showReview.toggle()
+                }, label: {
+                    Text("Rate it")
+                        .font(.system(.headline, design: .rounded))
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                })
+                .tint(Color("NavigationBarTitle"))
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 25))
+                .controlSize(.large)
+                .padding(.horizontal)
+                .padding(.bottom, 20)
             }
         }
+        .overlay(content: {
+            self.showReview ? ZStack {
+                ReviewView(restaurant: restaurant, isDisplayed: $showReview)
+                    .navigationBarHidden(true)
+            } : nil
+        })
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -88,6 +108,6 @@ struct RestaurantDetailView: View {
 
 struct RestaurantDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetailView(restaurant: Restaurant(name: "Cafe Deadend", image: "cafedeadend", location: "Hong Kong", type: "Coffee & Tea Shop", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."))
+        RestaurantDetailView(restaurant: Restaurant(name: "Cafe Deadend", image: "cafedeadend", location: "Hong Kong", type: "Coffee & Tea Shop", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.", rating: .awesome))
     }
 }
