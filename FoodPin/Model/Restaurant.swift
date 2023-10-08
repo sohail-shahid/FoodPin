@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
-struct Restaurant: Hashable {
+class Restaurant: ObservableObject {
     var name: String
     var image: String
     var location: String
@@ -15,5 +16,18 @@ struct Restaurant: Hashable {
     var isFavorite: Bool = false
     var phone: String
     var description: String
-    var rating : Rating
+    @Published var rating : Rating?
+    
+    init(name: String, image: String, location: String, type: String, isFavorite: Bool = false, phone: String,  description: String, rating: Rating?
+         = nil) {
+        self.name = name
+        self.type = type
+        self.location = location
+        self.phone = phone
+        self.description = description
+        self.image = image
+        self.isFavorite = isFavorite
+        self.rating = rating
+        
+    }
 }

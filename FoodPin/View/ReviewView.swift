@@ -52,6 +52,10 @@ struct ReviewView: View {
                     .opacity(showRating ? 1.0 : 0.0)
                     .offset(x: showRating ? 0 : 1000)
                     .animation(.easeOut.delay(Double(Rating.allCases.firstIndex(of: rating)!) * 0.05), value: showRating)
+                    .onTapGesture {
+                        restaurant.rating = rating
+                        isDisplayed = false
+                    }
                 }
             }
         }
