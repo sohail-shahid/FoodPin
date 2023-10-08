@@ -17,6 +17,9 @@
 		CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CE96D0BA2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CE96D0BB2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
+		CE9ED6222AD28A0D00F354F4 /* NewRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */; };
+		CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */; };
+		CE9ED6272AD2B03F00F354F4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ED6262AD2B03E00F354F4 /* ImagePicker.swift */; };
 		CECC9D242A78BDC800962F0E /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC9D232A78BDC800962F0E /* ReviewView.swift */; };
 		CECD88E12A7A16CB0035F7DB /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD88E02A7A16CB0035F7DB /* Rating.swift */; };
 		CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */; };
@@ -55,6 +58,9 @@
 		CE5531292A664E000039B093 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CE55312A2A664E000039B093 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantView.swift; sourceTree = "<group>"; };
+		CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSource.swift; sourceTree = "<group>"; };
+		CE9ED6262AD2B03E00F354F4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		CECC9D232A78BDC800962F0E /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		CECD88E02A7A16CB0035F7DB /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		CEF1AA662A5DDE0F008E14B4 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +116,7 @@
 				CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */,
 				CE0B9F1B2A67C22500B67AFC /* MapView.swift */,
 				CECC9D232A78BDC800962F0E /* ReviewView.swift */,
+				CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,12 +146,21 @@
 			path = Nunito;
 			sourceTree = "<group>";
 		};
+		CE9ED6252AD2B01400F354F4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE9ED6262AD2B03E00F354F4 /* ImagePicker.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		CEC924DA2A60A3BC00AC68F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */,
 				CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */,
 				CECD88E02A7A16CB0035F7DB /* Rating.swift */,
+				CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +188,7 @@
 		CEF1AA682A5DDE0F008E14B4 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				CE9ED6252AD2B01400F354F4 /* Util */,
 				CE0B9F182A670D3B00B67AFC /* Extensions */,
 				CE5531282A664D940039B093 /* Info.plist */,
 				CE5531212A664CD70039B093 /* Resources */,
@@ -341,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9ED6272AD2B03F00F354F4 /* ImagePicker.swift in Sources */,
 				CE0B9F1C2A67C22500B67AFC /* MapView.swift in Sources */,
 				CECC9D242A78BDC800962F0E /* ReviewView.swift in Sources */,
 				CECD88E12A7A16CB0035F7DB /* Rating.swift in Sources */,
@@ -348,7 +366,9 @@
 				CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */,
 				CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */,
 				CE3080972A6326EC009397DD /* ActivityView.swift in Sources */,
+				CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */,
 				CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */,
+				CE9ED6222AD28A0D00F354F4 /* NewRestaurantView.swift in Sources */,
 				CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */,
 				CE0B9F1A2A670D6000B67AFC /* UIColorExtension.swift in Sources */,
 			);
@@ -515,6 +535,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodPin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You need to grant the app access to your photo library so you can pick your favorite restaurant photo.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -545,6 +567,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodPin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "You need to grant the app access to your camera in order to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You need to grant the app access to your photo library so you can pick your favorite restaurant photo.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

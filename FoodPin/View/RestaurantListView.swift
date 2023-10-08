@@ -31,6 +31,8 @@ struct RestaurantListView: View {
         Restaurant(name: "Royal Oak", image: "royaloak", location: "London", type: "British", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal."),
         Restaurant(name: "CASK Pub and Kitchen", image: "cask", location: "London", type: "Thai", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.")]
     
+    @State var showNewRestaurant: Bool = false
+    
     
     var body: some View {
         NavigationStack {
@@ -60,8 +62,20 @@ struct RestaurantListView: View {
             .listStyle(.plain)
             .navigationTitle("Food Pin")
             .navigationBarTitleDisplayMode(.automatic)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.showNewRestaurant.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
-        .accentColor(.white)
+        .accentColor(.primary)
+        .sheet(isPresented: $showNewRestaurant) {
+            NewRestaurantView()
+        }
     }
 }
 
