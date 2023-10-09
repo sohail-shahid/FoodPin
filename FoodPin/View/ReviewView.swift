@@ -14,7 +14,7 @@ struct ReviewView: View {
     
     var body: some View {
         ZStack {
-            Image(restaurant.image)
+            Image(uiImage: UIImage(data: restaurant.image)!)
                 .resizable()
                 .scaledToFill()
                 .frame(minWidth: 0, maxWidth: .infinity)
@@ -38,7 +38,7 @@ struct ReviewView: View {
                     })
                     Spacer()
                 }
-                .padding(.top, 20)
+                .padding(.top, 30)
             }
             VStack (alignment: .leading) {
                 ForEach (Rating.allCases, id: \.self) { rating in
@@ -67,6 +67,6 @@ struct ReviewView: View {
 
 struct ReviewView_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewView(restaurant: Restaurant(name: "Cafe Deadend", image: "cafedeadend", location: "Hong Kong", type: "Coffee & Tea Shop", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.", rating: .awesome), isDisplayed: .constant(true))
+        ReviewView(restaurant: PersistenceController.testData!.first!, isDisplayed: .constant(true))
     }
 }

@@ -12,6 +12,9 @@
 		CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */; };
 		CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */; };
 		CE3080972A6326EC009397DD /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3080962A6326EC009397DD /* ActivityView.swift */; };
+		CE372EC82AD42BCC0090984E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE372EC72AD42BCC0090984E /* Persistence.swift */; };
+		CE372ECB2AD42DBC0090984E /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE372EC92AD42DBC0090984E /* FoodPin.xcdatamodeld */; };
+		CE372ECE2AD46F540090984E /* RestaurantFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE372ECD2AD46F540090984E /* RestaurantFormViewModel.swift */; };
 		CE55312B2A664E000039B093 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5531292A664E000039B093 /* Nunito-Regular.ttf */; };
 		CE55312C2A664E000039B093 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE55312A2A664E000039B093 /* Nunito-Bold.ttf */; };
 		CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
@@ -54,6 +57,9 @@
 		CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedItem.swift; sourceTree = "<group>"; };
 		CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		CE3080962A6326EC009397DD /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		CE372EC72AD42BCC0090984E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		CE372ECA2AD42DBC0090984E /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
+		CE372ECD2AD46F540090984E /* RestaurantFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormViewModel.swift; sourceTree = "<group>"; };
 		CE5531282A664D940039B093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE5531292A664E000039B093 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CE55312A2A664E000039B093 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -121,6 +127,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CE372ECC2AD46F360090984E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE372ECD2AD46F540090984E /* RestaurantFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CE5531212A664CD70039B093 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +175,7 @@
 				CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */,
 				CECD88E02A7A16CB0035F7DB /* Rating.swift */,
 				CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */,
+				CE372EC72AD42BCC0090984E /* Persistence.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +203,7 @@
 		CEF1AA682A5DDE0F008E14B4 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				CE372ECC2AD46F360090984E /* ViewModel */,
 				CE9ED6252AD2B01400F354F4 /* Util */,
 				CE0B9F182A670D3B00B67AFC /* Extensions */,
 				CE5531282A664D940039B093 /* Info.plist */,
@@ -197,6 +213,7 @@
 				CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */,
 				CEF1AA6D2A5DDE10008E14B4 /* Assets.xcassets */,
 				CEF1AA6F2A5DDE10008E14B4 /* Preview Content */,
+				CE372EC92AD42DBC0090984E /* FoodPin.xcdatamodeld */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -359,9 +376,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9ED6272AD2B03F00F354F4 /* ImagePicker.swift in Sources */,
+				CE372ECE2AD46F540090984E /* RestaurantFormViewModel.swift in Sources */,
 				CE0B9F1C2A67C22500B67AFC /* MapView.swift in Sources */,
 				CECC9D242A78BDC800962F0E /* ReviewView.swift in Sources */,
+				CE372EC82AD42BCC0090984E /* Persistence.swift in Sources */,
 				CECD88E12A7A16CB0035F7DB /* Rating.swift in Sources */,
+				CE372ECB2AD42DBC0090984E /* FoodPin.xcdatamodeld in Sources */,
 				CEF1AA6C2A5DDE0F008E14B4 /* RestaurantListView.swift in Sources */,
 				CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */,
 				CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */,
@@ -703,6 +723,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE372EC92AD42DBC0090984E /* FoodPin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE372ECA2AD42DBC0090984E /* FoodPin.xcdatamodel */,
+			);
+			currentVersion = CE372ECA2AD42DBC0090984E /* FoodPin.xcdatamodel */;
+			path = FoodPin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEF1AA5E2A5DDE0E008E14B4 /* Project object */;
 }

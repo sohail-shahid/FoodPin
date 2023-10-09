@@ -9,18 +9,26 @@ import SwiftUI
 
 
 struct NewRestaurantView: View {
+    
+    @ObservedObject private var restaurantFormViewModel: RestaurantFormViewModel
     @State var restaurantName = ""
-    @State private var restaurantImage = UIImage(named: "newphoto") ?? UIImage()
     @State private var showPhotoOption: Bool = false
     @State private var photoSource: PhotoSource?
     
     @Environment (\.dismiss) var dismiss
+    @Environment (\.managedObjectContext) var manageObjectContext
+    
+    init() {
+        let viewModel = RestaurantFormViewModel()
+        viewModel.image = UIImage(named: "newphoto")!
+        restaurantFormViewModel = viewModel
+    }
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack{
-                    Image(uiImage: restaurantImage)
+                    Image(uiImage: restaurantFormViewModel.image)
                         .resizable()
                         .scaledToFill()
                         .frame(minWidth: 0, maxWidth: .infinity)
@@ -31,16 +39,36 @@ struct NewRestaurantView: View {
                         .onTapGesture {
                             self.showPhotoOption.toggle()
                         }
-                    FormTextField(label: "NAME", placeholder: "Fill in the restaurant name", value: .constant(""))
-                    FormTextField(label: "TYPE", placeholder: "Fill in the restaurant type", value: .constant(""))
-                    FormTextField(label: "ADDRESS", placeholder: "Fill in the restaurant address", value: .constant(""))
+                    FormTextField(label: "NAME", placeholder: "Fill in the restaurant name", value: $restaurantFormViewModel.name)
+                    FormTextField(label: "TYPE", placeholder: "Fill in the restaurant type", value: $restaurantFormViewModel.type)
+                    FormTextField(label: "ADDRESS", placeholder: "Fill in the restaurant address", value: $restaurantFormViewModel.location)
                     
-                    FormTextField(label: "PHONE", placeholder: "Fill in the restaurant phone", value: .constant(""))
-                    FormTextView(label: "DESCRIPTION", value: .constant(""), height: 100)
+                    FormTextField(label: "PHONE", placeholder: "Fill in the restaurant phone", value: $restaurantFormViewModel.phone)
+                    FormTextView(label: "DESCRIPTION", height: 100, value: $restaurantFormViewModel.description)
                 }
                 .padding()
             }
             .navigationTitle("New Restaurant")
+            .toolbar {
+                ToolbarItem (placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .tint(.primary)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    Button {
+                        save()
+                        dismiss()
+                    } label: {
+                        Text("Save")
+                            .font(.headline)
+                            .foregroundColor(Color("NavigationBarTitle"))
+                    }
+                })
+            }
         }
         .accentColor(.primary)
         .actionSheet(isPresented: $showPhotoOption, content: {
@@ -57,28 +85,29 @@ struct NewRestaurantView: View {
         .fullScreenCover(item: $photoSource) { source in
             switch source {
             case .photoLibrary:
-                ImagePicker(sourceType: .photoLibrary, selectedImage: $restaurantImage)
+                ImagePicker(sourceType: .photoLibrary, selectedImage: $restaurantFormViewModel.image)
                     .ignoresSafeArea()
             case .camera:
-                ImagePicker(sourceType: .camera, selectedImage: $restaurantImage)
+                ImagePicker(sourceType: .camera, selectedImage: $restaurantFormViewModel.image)
                     .ignoresSafeArea()
             }
         }
-        .toolbar {
-            ToolbarItem (placement: .navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                }
-            }
-            
-            ToolbarItem(placement: .navigationBarTrailing, content: {
-                Text("Save")
-                    .font(.headline)
-                    .foregroundColor(Color("NavigationBarTitle"))
-                
-            })
+    }
+    
+    private func save() {
+        let restaurant = Restaurant(context: manageObjectContext)
+        restaurant.name = restaurantFormViewModel.name
+        restaurant.type = restaurantFormViewModel.type
+        restaurant.location = restaurantFormViewModel.location
+        restaurant.phone = restaurantFormViewModel.phone
+        restaurant.image = restaurantFormViewModel.image.pngData()!
+        restaurant.summary = restaurantFormViewModel.description
+        restaurant.isFavorite = false
+        do {
+            try manageObjectContext.save()
+        } catch {
+            print("Failed to save the record...")
+            print(error.localizedDescription)
         }
     }
 }
@@ -106,9 +135,9 @@ struct FormTextField: View {
 
 struct FormTextView: View {
     var label: String
-    @Binding var value: String
     var height: CGFloat = 200.0
-    
+    @Binding var value: String
+
     var body: some View {
         VStack(alignment: .leading) {
             Text(label)

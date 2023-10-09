@@ -7,27 +7,30 @@
 
 import Foundation
 import Combine
+import CoreData
 
-class Restaurant: ObservableObject {
-    var name: String
-    var image: String
-    var location: String
-    var type: String
-    var isFavorite: Bool = false
-    var phone: String
-    var description: String
-    @Published var rating : Rating?
+class Restaurant: NSManagedObject {
+    @NSManaged var name: String
+    @NSManaged var image: Data
+    @NSManaged var location: String
+    @NSManaged var type: String
+    @NSManaged var isFavorite: Bool
+    @NSManaged var phone: String
+    @NSManaged var summary: String
+    @NSManaged var ratingText: String?
     
-    init(name: String, image: String, location: String, type: String, isFavorite: Bool = false, phone: String,  description: String, rating: Rating?
-         = nil) {
-        self.name = name
-        self.type = type
-        self.location = location
-        self.phone = phone
-        self.description = description
-        self.image = image
-        self.isFavorite = isFavorite
-        self.rating = rating
-        
+}
+
+extension Restaurant {
+    var rating: Rating? {
+        get {
+            guard let ratingText = ratingText else {
+                return nil
+            }
+            return Rating(rawValue: ratingText)
+        }
+        set {
+            self.ratingText = newValue?.rawValue
+        }
     }
 }

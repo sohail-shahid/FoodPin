@@ -8,26 +8,21 @@
 import SwiftUI
 
 struct RestaurantDetailView: View {
-    var restaurant: Restaurant
+    @ObservedObject var restaurant: Restaurant
     
     @Environment (\.dismiss) var dismiss
+    @Environment (\.managedObjectContext) var manageObjectContext
     @State var showReview: Bool = false
     
     var body: some View {
         ScrollView {
             VStack (alignment: .leading) {
-                Image(restaurant.image)
+                Image(uiImage: UIImage(data: restaurant.image)!)
                     .resizable()
                     .scaledToFill()
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .frame(height: 445)
                     .overlay() {
-                        Image(systemName: restaurant.isFavorite ? "heart.fill" : "heart")
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topTrailing)
-                            .padding()
-                            .font(.system(size: 30.0))
-                            .foregroundColor(.white)
-                            .padding(.top, 40)
                         HStack(alignment: .bottom) {
                             VStack (alignment: .leading, spacing: 5.0) {
                                 Text(restaurant.name)
@@ -54,7 +49,7 @@ struct RestaurantDetailView: View {
                         }
                         .animation(.spring(response: 0.2, dampingFraction: 0.3, blendDuration: 0.3), value: restaurant.rating)
                     }
-                Text(restaurant.description)
+                Text(restaurant.summary)
                     .padding()
                 HStack (alignment: .top) {
                     VStack (alignment: .leading) {
@@ -106,19 +101,44 @@ struct RestaurantDetailView: View {
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    restaurant.isFavorite.toggle()
+                    save()
+                    debugPrint("heart button click")
+                } label: {
+                    Image(systemName: restaurant.isFavorite ? "heart.fill" : "heart")
+                }
+                .padding()
+                .font(.system(size: 20.0))
+                .foregroundColor(restaurant.isFavorite ? .yellow : .white)
+            }
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
                     dismiss()
                 }) {
-                    Text("\(Image(systemName: "chevron.left")) \(restaurant.name)")
+                    Text("\(Image(systemName: "chevron.left"))")
                 }
             }
+        }
+        .onChange(of: restaurant.rating) { _ in
+            save()
+        }
+    }
+    
+    private func save() {
+        if self.manageObjectContext.hasChanges {
+            try? self.manageObjectContext.save()
         }
     }
 }
 
 struct RestaurantDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetailView(restaurant: Restaurant(name: "Cafe Deadend", image: "cafedeadend", location: "Hong Kong", type: "Coffee & Tea Shop", isFavorite: false, phone: "232-923423", description: "Searching for great breakfast eateries and coffee? This place is for you. We open at 6:30 every morning, and close at 9 PM. We offer espresso and espresso based drink, such as capuccino, cafe latte, piccolo and many more. Come over and enjoy a great meal.", rating: .awesome))
+        NavigationStack {
+            RestaurantDetailView(restaurant: PersistenceController.testData!.first!)
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
+        .accentColor(.white)
     }
 }
