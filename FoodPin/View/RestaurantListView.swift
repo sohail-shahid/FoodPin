@@ -13,7 +13,7 @@ struct RestaurantListView: View {
     @FetchRequest(entity: Restaurant.entity(), sortDescriptors: [])
     var resturants: FetchedResults<Restaurant>
     @State var showNewRestaurant: Bool = false
-    
+    @State var searchText: String = ""
     
     var body: some View {
         NavigationStack {
@@ -60,6 +60,17 @@ struct RestaurantListView: View {
         .accentColor(.primary)
         .sheet(isPresented: $showNewRestaurant) {
                 NewRestaurantView()
+        }
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Search restaurants...", suggestions: {
+            Text("Thai").searchCompletion("Thai")
+            Text("Cafe").searchCompletion("Cafe")
+        })
+        .onChange(of: searchText) { _ in
+            let valueTrue = NSPredicate(value: true)
+            let namePredicate = NSPredicate(format: "name CONTAINS[c] %@", searchText)
+            let locationPredicate = NSPredicate(format: "location CONTAINS[c] %@", searchText)
+            let predicate = searchText.isEmpty ? valueTrue : NSCompoundPredicate(orPredicateWithSubpredicates: [namePredicate, locationPredicate])
+            resturants.nsPredicate = predicate
         }
     }
     
