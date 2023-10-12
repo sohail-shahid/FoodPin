@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0378232AD86BF400AE9354 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0378222AD86BF400AE9354 /* AboutView.swift */; };
+		CE0378252AD8706A00AE9354 /* WebLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0378242AD8706A00AE9354 /* WebLink.swift */; };
+		CE03782A2AD8738200AE9354 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0378292AD8738200AE9354 /* WebView.swift */; };
+		CE03782C2AD877E800AE9354 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03782B2AD877E800AE9354 /* SafariView.swift */; };
 		CE0B9F1A2A670D6000B67AFC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F192A670D6000B67AFC /* UIColorExtension.swift */; };
 		CE0B9F1C2A67C22500B67AFC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F1B2A67C22500B67AFC /* MapView.swift */; };
 		CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0378222AD86BF400AE9354 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		CE0378242AD8706A00AE9354 /* WebLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLink.swift; sourceTree = "<group>"; };
+		CE0378292AD8738200AE9354 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		CE03782B2AD877E800AE9354 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		CE0B9F192A670D6000B67AFC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE0B9F1B2A67C22500B67AFC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedItem.swift; sourceTree = "<group>"; };
@@ -114,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0378282AD8734500AE9354 /* UiViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				CE0378292AD8738200AE9354 /* WebView.swift */,
+				CE03782B2AD877E800AE9354 /* SafariView.swift */,
+			);
+			path = UiViewRepresentable;
+			sourceTree = "<group>";
+		};
 		CE0B9F182A670D3B00B67AFC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +151,7 @@
 		CE3080952A62BF4C009397DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE0378282AD8734500AE9354 /* UiViewRepresentable */,
 				CE1131DC2AD71D240004B1C4 /* Tutorial */,
 				CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */,
 				CE3080962A6326EC009397DD /* ActivityView.swift */,
@@ -142,6 +160,7 @@
 				CECC9D232A78BDC800962F0E /* ReviewView.swift */,
 				CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */,
 				CE1C15482AD80584001EA75D /* MainView.swift */,
+				CE0378222AD86BF400AE9354 /* AboutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +215,7 @@
 				CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */,
 				CE372EC72AD42BCC0090984E /* Persistence.swift */,
 				CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */,
+				CE0378242AD8706A00AE9354 /* WebLink.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,8 +416,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9ED6272AD2B03F00F354F4 /* ImagePicker.swift in Sources */,
+				CE03782A2AD8738200AE9354 /* WebView.swift in Sources */,
 				CE372ECE2AD46F540090984E /* RestaurantFormViewModel.swift in Sources */,
 				CE0B9F1C2A67C22500B67AFC /* MapView.swift in Sources */,
+				CE03782C2AD877E800AE9354 /* SafariView.swift in Sources */,
 				CECC9D242A78BDC800962F0E /* ReviewView.swift in Sources */,
 				CE372EC82AD42BCC0090984E /* Persistence.swift in Sources */,
 				CE1131E22AD71FBC0004B1C4 /* TutorialPageModel.swift in Sources */,
@@ -411,9 +433,11 @@
 				CE1C15492AD80584001EA75D /* MainView.swift in Sources */,
 				CE3080972A6326EC009397DD /* ActivityView.swift in Sources */,
 				CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */,
+				CE0378232AD86BF400AE9354 /* AboutView.swift in Sources */,
 				CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */,
 				CE9ED6222AD28A0D00F354F4 /* NewRestaurantView.swift in Sources */,
 				CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */,
+				CE0378252AD8706A00AE9354 /* WebLink.swift in Sources */,
 				CE0B9F1A2A670D6000B67AFC /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
