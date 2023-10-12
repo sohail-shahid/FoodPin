@@ -13,6 +13,7 @@
 		CE1131DE2AD71D3E0004B1C4 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1131DD2AD71D3E0004B1C4 /* TutorialView.swift */; };
 		CE1131E02AD71D590004B1C4 /* TutorialPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1131DF2AD71D590004B1C4 /* TutorialPageView.swift */; };
 		CE1131E22AD71FBC0004B1C4 /* TutorialPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */; };
+		CE1C15492AD80584001EA75D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C15482AD80584001EA75D /* MainView.swift */; };
 		CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */; };
 		CE3080972A6326EC009397DD /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3080962A6326EC009397DD /* ActivityView.swift */; };
 		CE372EC82AD42BCC0090984E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE372EC72AD42BCC0090984E /* Persistence.swift */; };
@@ -61,6 +62,7 @@
 		CE1131DD2AD71D3E0004B1C4 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		CE1131DF2AD71D590004B1C4 /* TutorialPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageView.swift; sourceTree = "<group>"; };
 		CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageModel.swift; sourceTree = "<group>"; };
+		CE1C15482AD80584001EA75D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		CE3080962A6326EC009397DD /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		CE372EC72AD42BCC0090984E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				CE0B9F1B2A67C22500B67AFC /* MapView.swift */,
 				CECC9D232A78BDC800962F0E /* ReviewView.swift */,
 				CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */,
+				CE1C15482AD80584001EA75D /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */,
 				CE1131DE2AD71D3E0004B1C4 /* TutorialView.swift in Sources */,
 				CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */,
+				CE1C15492AD80584001EA75D /* MainView.swift in Sources */,
 				CE3080972A6326EC009397DD /* ActivityView.swift in Sources */,
 				CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */,
 				CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */,
