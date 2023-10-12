@@ -10,6 +10,9 @@
 		CE0B9F1A2A670D6000B67AFC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F192A670D6000B67AFC /* UIColorExtension.swift */; };
 		CE0B9F1C2A67C22500B67AFC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F1B2A67C22500B67AFC /* MapView.swift */; };
 		CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */; };
+		CE1131DE2AD71D3E0004B1C4 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1131DD2AD71D3E0004B1C4 /* TutorialView.swift */; };
+		CE1131E02AD71D590004B1C4 /* TutorialPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1131DF2AD71D590004B1C4 /* TutorialPageView.swift */; };
+		CE1131E22AD71FBC0004B1C4 /* TutorialPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */; };
 		CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */; };
 		CE3080972A6326EC009397DD /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3080962A6326EC009397DD /* ActivityView.swift */; };
 		CE372EC82AD42BCC0090984E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE372EC72AD42BCC0090984E /* Persistence.swift */; };
@@ -55,6 +58,9 @@
 		CE0B9F192A670D6000B67AFC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE0B9F1B2A67C22500B67AFC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CE0B9F1D2A67CB6200B67AFC /* AnnotatedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedItem.swift; sourceTree = "<group>"; };
+		CE1131DD2AD71D3E0004B1C4 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		CE1131DF2AD71D590004B1C4 /* TutorialPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageView.swift; sourceTree = "<group>"; };
+		CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageModel.swift; sourceTree = "<group>"; };
 		CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		CE3080962A6326EC009397DD /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		CE372EC72AD42BCC0090984E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -114,9 +120,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE1131DC2AD71D240004B1C4 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CE1131DD2AD71D3E0004B1C4 /* TutorialView.swift */,
+				CE1131DF2AD71D590004B1C4 /* TutorialPageView.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		CE3080952A62BF4C009397DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE1131DC2AD71D240004B1C4 /* Tutorial */,
 				CEF1AA6B2A5DDE0F008E14B4 /* RestaurantListView.swift */,
 				CE3080962A6326EC009397DD /* ActivityView.swift */,
 				CE1F33182A63C9B300229AB4 /* RestaurantDetailView.swift */,
@@ -176,6 +192,7 @@
 				CECD88E02A7A16CB0035F7DB /* Rating.swift */,
 				CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */,
 				CE372EC72AD42BCC0090984E /* Persistence.swift */,
+				CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,10 +397,13 @@
 				CE0B9F1C2A67C22500B67AFC /* MapView.swift in Sources */,
 				CECC9D242A78BDC800962F0E /* ReviewView.swift in Sources */,
 				CE372EC82AD42BCC0090984E /* Persistence.swift in Sources */,
+				CE1131E22AD71FBC0004B1C4 /* TutorialPageModel.swift in Sources */,
 				CECD88E12A7A16CB0035F7DB /* Rating.swift in Sources */,
 				CE372ECB2AD42DBC0090984E /* FoodPin.xcdatamodeld in Sources */,
 				CEF1AA6C2A5DDE0F008E14B4 /* RestaurantListView.swift in Sources */,
+				CE1131E02AD71D590004B1C4 /* TutorialPageView.swift in Sources */,
 				CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */,
+				CE1131DE2AD71D3E0004B1C4 /* TutorialView.swift in Sources */,
 				CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */,
 				CE3080972A6326EC009397DD /* ActivityView.swift in Sources */,
 				CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */,

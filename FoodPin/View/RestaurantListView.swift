@@ -10,10 +10,13 @@ import SwiftUI
 struct RestaurantListView: View {
     
     @Environment(\.managedObjectContext) var context
+    @AppStorage("hasViewedWalkthrough") var hasViewedWalkthrough: Bool = false
+
     @FetchRequest(entity: Restaurant.entity(), sortDescriptors: [])
     var resturants: FetchedResults<Restaurant>
     @State var showNewRestaurant: Bool = false
     @State var searchText: String = ""
+    @State private var showWalkthrough = false
     
     var body: some View {
         NavigationStack {
@@ -58,8 +61,14 @@ struct RestaurantListView: View {
             }
         }
         .accentColor(.primary)
+        .onAppear() {
+            showWalkthrough = hasViewedWalkthrough ? false : true
+        }
+        .sheet(isPresented: $showWalkthrough) {
+            TutorialView()
+        }
         .sheet(isPresented: $showNewRestaurant) {
-                NewRestaurantView()
+            NewRestaurantView()
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Search restaurants...", suggestions: {
             Text("Thai").searchCompletion("Thai")
