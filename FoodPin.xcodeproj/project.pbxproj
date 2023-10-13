@@ -31,6 +31,8 @@
 		CE9ED6222AD28A0D00F354F4 /* NewRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */; };
 		CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */; };
 		CE9ED6272AD2B03F00F354F4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9ED6262AD2B03E00F354F4 /* ImagePicker.swift */; };
+		CEC3BCA32AD90CDC00EF5E3E /* RestaurantCloudStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3BCA22AD90CDC00EF5E3E /* RestaurantCloudStore.swift */; };
+		CEC3BCA52AD911CA00EF5E3E /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3BCA42AD911CA00EF5E3E /* DiscoverView.swift */; };
 		CECC9D242A78BDC800962F0E /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC9D232A78BDC800962F0E /* ReviewView.swift */; };
 		CECD88E12A7A16CB0035F7DB /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD88E02A7A16CB0035F7DB /* Rating.swift */; };
 		CEF1AA6A2A5DDE0F008E14B4 /* FoodPinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1AA692A5DDE0F008E14B4 /* FoodPinApp.swift */; };
@@ -83,6 +85,9 @@
 		CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantView.swift; sourceTree = "<group>"; };
 		CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSource.swift; sourceTree = "<group>"; };
 		CE9ED6262AD2B03E00F354F4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CEC3BCA12AD8FA5D00EF5E3E /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
+		CEC3BCA22AD90CDC00EF5E3E /* RestaurantCloudStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCloudStore.swift; sourceTree = "<group>"; };
+		CEC3BCA42AD911CA00EF5E3E /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		CECC9D232A78BDC800962F0E /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		CECD88E02A7A16CB0035F7DB /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		CEF1AA662A5DDE0F008E14B4 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +166,7 @@
 				CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */,
 				CE1C15482AD80584001EA75D /* MainView.swift */,
 				CE0378222AD86BF400AE9354 /* AboutView.swift */,
+				CEC3BCA42AD911CA00EF5E3E /* DiscoverView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 				CE372EC72AD42BCC0090984E /* Persistence.swift */,
 				CE1131E12AD71FBC0004B1C4 /* TutorialPageModel.swift */,
 				CE0378242AD8706A00AE9354 /* WebLink.swift */,
+				CEC3BCA22AD90CDC00EF5E3E /* RestaurantCloudStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 		CEF1AA682A5DDE0F008E14B4 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				CEC3BCA12AD8FA5D00EF5E3E /* FoodPin.entitlements */,
 				CE372ECC2AD46F360090984E /* ViewModel */,
 				CE9ED6252AD2B01400F354F4 /* Util */,
 				CE0B9F182A670D3B00B67AFC /* Extensions */,
@@ -428,8 +436,10 @@
 				CEF1AA6C2A5DDE0F008E14B4 /* RestaurantListView.swift in Sources */,
 				CE1131E02AD71D590004B1C4 /* TutorialPageView.swift in Sources */,
 				CE1F33192A63C9B300229AB4 /* RestaurantDetailView.swift in Sources */,
+				CEC3BCA52AD911CA00EF5E3E /* DiscoverView.swift in Sources */,
 				CE1131DE2AD71D3E0004B1C4 /* TutorialView.swift in Sources */,
 				CE0B9F1E2A67CB6200B67AFC /* AnnotatedItem.swift in Sources */,
+				CEC3BCA32AD90CDC00EF5E3E /* RestaurantCloudStore.swift in Sources */,
 				CE1C15492AD80584001EA75D /* MainView.swift in Sources */,
 				CE3080972A6326EC009397DD /* ActivityView.swift in Sources */,
 				CE9ED6242AD2A54B00F354F4 /* PhotoSource.swift in Sources */,
@@ -596,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodPin/Preview Content\"";
@@ -615,7 +626,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alihassan.foodPinDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -628,6 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodPin/Preview Content\"";
@@ -647,7 +659,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.FoodPin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alihassan.foodPinDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

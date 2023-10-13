@@ -14,6 +14,7 @@ struct NewRestaurantView: View {
     @State var restaurantName = ""
     @State private var showPhotoOption: Bool = false
     @State private var photoSource: PhotoSource?
+    let cloudStore = RestaurantCloudStore()
     
     @Environment (\.dismiss) var dismiss
     @Environment (\.managedObjectContext) var manageObjectContext
@@ -109,6 +110,7 @@ struct NewRestaurantView: View {
             print("Failed to save the record...")
             print(error.localizedDescription)
         }
+        cloudStore.saveRecordToCloud(restaurant: restaurant)
     }
 }
 
