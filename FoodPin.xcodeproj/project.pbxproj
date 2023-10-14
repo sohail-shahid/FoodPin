@@ -25,6 +25,8 @@
 		CE372ECE2AD46F540090984E /* RestaurantFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE372ECD2AD46F540090984E /* RestaurantFormViewModel.swift */; };
 		CE55312B2A664E000039B093 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5531292A664E000039B093 /* Nunito-Regular.ttf */; };
 		CE55312C2A664E000039B093 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE55312A2A664E000039B093 /* Nunito-Bold.ttf */; };
+		CE5DB5892ADA438100B889D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE5DB5872ADA438100B889D7 /* InfoPlist.strings */; };
+		CE5DB58C2ADA438100B889D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE5DB58A2ADA438100B889D7 /* Localizable.strings */; };
 		CE96D0B92A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CE96D0BA2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
 		CE96D0BB2A5F2D5A00A2E49C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */; };
@@ -81,6 +83,12 @@
 		CE5531282A664D940039B093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CE5531292A664E000039B093 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CE55312A2A664E000039B093 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		CE5DB5882ADA438100B889D7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE5DB58B2ADA438100B889D7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE5DB58D2ADA43A100B889D7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		CE5DB58E2ADA43A100B889D7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE5DB5932ADAFF5400B889D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE5DB5942ADAFF5A00B889D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE96D0B82A5F2D5A00A2E49C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		CE9ED6212AD28A0D00F354F4 /* NewRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantView.swift; sourceTree = "<group>"; };
 		CE9ED6232AD2A54B00F354F4 /* PhotoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSource.swift; sourceTree = "<group>"; };
@@ -255,6 +263,8 @@
 				CE9ED6252AD2B01400F354F4 /* Util */,
 				CE0B9F182A670D3B00B67AFC /* Extensions */,
 				CE5531282A664D940039B093 /* Info.plist */,
+				CE5DB58A2ADA438100B889D7 /* Localizable.strings */,
+				CE5DB5872ADA438100B889D7 /* InfoPlist.strings */,
 				CE5531212A664CD70039B093 /* Resources */,
 				CE3080952A62BF4C009397DD /* View */,
 				CEC924DA2A60A3BC00AC68F7 /* Model */,
@@ -376,6 +386,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
+				"zh-Hant",
 				Base,
 			);
 			mainGroup = CEF1AA5D2A5DDE0E008E14B4;
@@ -396,9 +408,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE55312B2A664E000039B093 /* Nunito-Regular.ttf in Resources */,
+				CE5DB58C2ADA438100B889D7 /* Localizable.strings in Resources */,
 				CEF1AA712A5DDE10008E14B4 /* Preview Assets.xcassets in Resources */,
 				CE55312C2A664E000039B093 /* Nunito-Bold.ttf in Resources */,
 				CEF1AA6E2A5DDE10008E14B4 /* Assets.xcassets in Resources */,
+				CE5DB5892ADA438100B889D7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +499,29 @@
 			targetProxy = CEF1AA812A5DDE10008E14B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE5DB5872ADA438100B889D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE5DB5882ADA438100B889D7 /* de */,
+				CE5DB58D2ADA43A100B889D7 /* zh-Hant */,
+				CE5DB5942ADAFF5A00B889D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE5DB58A2ADA438100B889D7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE5DB58B2ADA438100B889D7 /* de */,
+				CE5DB58E2ADA43A100B889D7 /* zh-Hant */,
+				CE5DB5932ADAFF5400B889D7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CEF1AA882A5DDE10008E14B4 /* Debug */ = {
