@@ -81,6 +81,12 @@ struct RestaurantListView: View {
             let predicate = searchText.isEmpty ? valueTrue : NSCompoundPredicate(orPredicateWithSubpredicates: [namePredicate, locationPredicate])
             resturants.nsPredicate = predicate
         }
+        .onOpenURL { url in
+            switch url.path {
+            case "/NewRestaurant": showNewRestaurant = true
+            default: return
+            }
+        }
     }
     
     private func deleteRecord(indexSet: IndexSet) {

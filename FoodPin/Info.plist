@@ -2,10 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.alihassan.foodPinDemo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>foodpinapp</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Nunito-Regular.ttf</string>
 		<string>Nunito-Bold.ttf</string>
+	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Create a New Restaurant</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Restaurant</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.alihassan.foodPinDemo</string>
+		</dict>
 	</array>
 </dict>
 </plist>

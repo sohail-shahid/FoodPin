@@ -28,6 +28,14 @@ struct MainView: View {
                 }
                 .tag(2)
         }
+        .onOpenURL(perform: { url in
+            switch url.path {
+                case "/OpenFavorites": selectedTabIndex = 0
+                case "/OpenDiscover": selectedTabIndex = 1
+                case "/NewRestaurant": selectedTabIndex = 0
+                default: return
+                }
+        })
         .accentColor(Color("NavigationBarTitle"))
     }
 }
