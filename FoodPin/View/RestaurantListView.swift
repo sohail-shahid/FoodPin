@@ -87,6 +87,9 @@ struct RestaurantListView: View {
             default: return
             }
         }
+        .task {
+            prepareNotification()
+        }
     }
     
     private func deleteRecord(indexSet: IndexSet) {
@@ -101,6 +104,43 @@ struct RestaurantListView: View {
                 print(error)
             }
         }
+    }
+    
+    private func prepareNotification() {
+        if resturants.count <= 0 {
+            return
+        }
+        
+        let randomIndex = Int.random(in: 0 ..< resturants.count)
+        let suggestedRestaurant = resturants[randomIndex]
+        
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "Restaurant Recommendation"
+        notificationContent.subtitle = "Try new food today"
+        notificationContent.body = "I recommend you to check out \(suggestedRestaurant.name). The restaurant is one of your favorites. It is located at \(suggestedRestaurant.location). Would you like to give it a try?"
+        notificationContent.sound = .default
+        
+        let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        let tempFileURL = tempDirURL.appendingPathComponent("suggested-restaurant.jpg")
+        if let image = UIImage(data: suggestedRestaurant.image as Data) {
+            try? image.jpegData(compressionQuality: 1.0)?.write(to: tempFileURL)
+            if let restaurantImage = try? UNNotificationAttachment(identifier: Constants.LOCAL_NOTIFICATION_ATTACHMENT_ID, url: tempFileURL, options: nil) {
+                notificationContent.attachments = [restaurantImage]
+            }
+        }
+        notificationContent.userInfo = ["phone": suggestedRestaurant.phone]
+        // Adding actions
+        let categoryIdentifer = Constants.CATEGORY_ACTION_ID
+        let makeReservationAction = UNNotificationAction(identifier:Constants.RESERVATION_ACTION_ID, title: "Reserve a table", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "foodpin.cancel", title: "Later", options: [])
+        let category = UNNotificationCategory(identifier: categoryIdentifer, actions: [makeReservationAction, cancelAction], intentIdentifiers: [], options:[])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        notificationContent.categoryIdentifier = categoryIdentifer
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let notificationRequest = UNNotificationRequest(identifier: "foodpin.restaurantSuggestion", content: notificationContent, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(notificationRequest)
     }
 }
 
